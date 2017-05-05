@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+</head>
+<body>
+    {{ /* comment */}}
+    {{ if gt .Score1 .Score2 }}
+        <p>Score 1 > Score 2</p>
+    {{ end }}
+
+    {{ if lt .Score1 .Score2 }}
+        <p>Score 1 < Score 2</p>
+    {{ end }}
+
+    {{ if eq .Score1 .Score2 }}
+        <p>Score 1 = Score 2</p>
+    {{ end }}
+
+    {{ if gt .Score1 10 }}
+        <p>Score 1 > 10</p>
+    {{ end }}
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+</head>
+<body>
+    #EXAMPLE 1
+    {{ range . }}
+        <p>{{ .Name }}</p>
+    {{ end }}
+
+    #EXAMPLE 2
+    {{ if . }}
+        {{.}}
+    {{ end }}
+
+    #EXAMPLE 3
+    {{ range . }}
+        {{ if .IsAdmin }}
+            <p>{{ . }}</p>
+        {{ end }}
+    {{ end }}
+
+    #EXAMPLE 4
+    {{ range . }}
+        {{ if and .IsAdmin .Name }}
+            <p>{{ .Name }}</p>
+        {{ end }}
+    {{ end }}
+</body>
+</html>

@@ -1,0 +1,5 @@
+{{ define "year" }}
+    AcaYear: {{ .AcaYear }}
+    {{ template "semester" .Fall }}
+    {{ template "semester" .Spring }}
+{{ end }}

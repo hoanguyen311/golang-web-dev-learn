@@ -1,0 +1,9 @@
+{{ define "meal" }}
+<h2>{{ .Name }}</h2>
+Dishes:
+<ul>
+    {{ range .Dishes }}
+        <li>{{ .Name }} - {{ .Price }}</li>
+    {{ end }}
+</ul>
+{{ end }}

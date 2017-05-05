@@ -1,0 +1,8 @@
+{{ define "semester" }}
+    {{ .Term }}
+    <ul>
+        {{ range .Courses }}
+            <li>{{ .Number }} - {{ .Name }} - {{ .Units }}</li>
+        {{ end }}
+    </ul>
+{{ end }}
