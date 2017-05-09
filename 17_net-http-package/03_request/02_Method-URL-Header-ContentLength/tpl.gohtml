@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NET/HTTP</title>
+</head>
+<body>
+
+    <h2>Method: </h2>
+    <strong>{{ .Method }}</strong>
+    <h2>Url Path: </h2>
+    <strong>{{ .URL.Path }}</strong>
+    <h2>HOST: </h2>
+    <strong>{{ .Host }}</strong>
+    <h2>ContentLength: </h2>
+    <strong>{{ .ContentLength }}</strong>
+    <h2>Submissions: </h2>
+
+    {{ if .Submissions }}
+        <ul>
+            {{ range $key, $values := .Submissions }}
+                <li>
+                    {{ $key }}
+                    <ul>
+                        {{ range $values }}
+                            <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </li>
+            {{ end }}
+        </ul>
+    {{ end }}
+    <h2>Headers</h2>
+    {{ range $key, $values := .Header }}
+    <ul>
+        <li>
+            {{ $key }} : {{ range $values }}{{ . }}{{ end }}
+        </li>
+    </ul>
+
+    {{ end }}
+
+    <form action="/?fname=Hoa" method="post">
+        <input type="text" name="lname" value="">
+        <button type="submit" name="submit-button" value="Onda button">Submit</button>
+    </form>
+</body>
+</html>
